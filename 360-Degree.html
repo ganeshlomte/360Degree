@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+  <head>
+      <meta charset='UTF-8' />
+      <meta http-equiv='content-type' content='text/html; charset=utf-8' />
+
+      <title>360 Degree</title>
+
+      <link rel='stylesheet' href='css/threesixty.css'>
+      <!-- add any external libraries your code needs -->
+      <script src='js/jquery-1.10.2.min.js'></script>
+      <script src='js/threesixty.js'></script>
+      <script src='js/threesixty.fullscreen.js'></script>
+      <style type="text/css">
+        /* .threesixty .nav_bar a.nav_bar_previous, .threesixty .nav_bar a.nav_bar_next { display: none; } */
+      </style>
+      <script type="text/javascript">
+      window.onload = init;
+      var car;
+
+      function init(){
+        car = $('.car').ThreeSixty({
+          totalFrames: 52,
+          endFrame: 52,
+          currentFrame: 1,
+          imgList: '.threesixty_images',
+          progress: '.spinner',
+          imagePath:'assets/',
+          filePrefix: '',
+          ext: '.png',
+          height: 550,
+          width: 1000,
+          navigation: true,
+          disableSpin: false,
+          //autoplay: false,
+          //responsive: true,
+          plugins: ['ThreeSixtyFullscreen']
+        });/*
+        $('.custom_previous').bind('click', function(e) {
+          alert('prev');
+          car.previous();
+        });
+
+        $('.custom_next').bind('click', function(e) {
+          alert('next');
+          car.next();
+        });
+
+        $('.custom_play').bind('click', function(e) {
+          car.play();
+        });
+
+        $('.custom_stop').bind('click', function(e) {
+          car.stop();
+        });*/
+    }
+    
+    
+    </script>
+
+  </head>
+  <body>   
+    <div id='container'>
+      <div class="threesixty car">
+          <div class="spinner">
+              <span>0%</span>
+          </div>
+          <ol class="threesixty_images"></ol>
+      </div>
+
+    </div>
+    
+  </body>
+</html>
